@@ -15,9 +15,18 @@
 ## 기본 네트워크 환경 구성
 
 1. VPC 생성
+   * AWS는 불특정 다수가 사용하는 공용 웹 공간
+   * 다른 사용자와 사용하는 네트워크의 분리가 필요
+   * DNS Hostname을 enable하여 EC2같은 리소스들이 host name을 생성할 수 있도록 함
 2. Subnet 생성
+   * VPC의 IP 대역 나눔
+   * VPC의 CIDR 대역보다 작아야
 3. Internet Gateway 생성
+   * 외부 인터넷과 통신 가능하도록 함
+   * VPC에 부착 필요
 4. Route Table 생성, Route 설정
+   * 네트워크간의 통신에 있어서 목적지, 대상지 등으로 데이터 패킷 이동 정보를 구성하는 규칙
+   * public subnet은 internet gateway를 통해 외부와의 통신 가능
 
 ## Public EC2 인스턴스 생성 및 LAMP 웹서버 구성
 
